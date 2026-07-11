@@ -12,10 +12,10 @@ import { fastify } from 'fastify'
 
 const server = fastify({})
 
-//porta hibrida
+//porta hibrida / hybrid port
 const porta = process.env.PORT || 3333;
 
-//rotas 
+//rotas / route
 server.get('/home', () =>{
      return 'History - Default'
 })
@@ -29,11 +29,11 @@ server.get('/favorites', () =>{
 })
 
 server.get('/log', () =>{
-     return 'log'
+     return 'Log'
 })
 
 
-//rota hibrida pra nuvem e pra localhost
+//rota hibrida pra nuvem e pra localhost / hybrid port for a cloud and a localhost
 const start = async () => {
      try{
           await server.listen({
