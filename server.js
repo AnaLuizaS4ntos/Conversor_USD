@@ -17,11 +17,19 @@ const porta = process.env.PORT || 3333;
 
 //rotas 
 server.get('/home', () =>{
-     return 'Home is here'
+     return 'History - Default'
 })
 
-server.get('/Login', () =>{
-     return 'Login...'
+server.get('/compare', () =>{
+     return 'Compare'
+})
+
+server.get('/favorites', () =>{
+     return 'Favorites'
+})
+
+server.get('/log', () =>{
+     return 'log'
 })
 
 
