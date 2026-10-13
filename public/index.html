@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body class="app-body">
@@ -18,7 +19,14 @@
     <header class="app-header">
       <div class="brand-row">
         <div class="brand-logo">
-          <span class="brand-tag">//</span>
+          <div class="brand-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 64 64" class="brand-icon-svg">
+              <rect width="64" height="64" rx="16" fill="#181920"/>
+              <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="#2D303B" stroke-width="2.5"/>
+              <line x1="20" y1="48" x2="31" y2="16" stroke="#B6F02A" stroke-width="6" stroke-linecap="round"/>
+              <line x1="33" y1="48" x2="44" y2="16" stroke="#B6F02A" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <span class="brand-title">FX_CHECKER</span>
         </div>
         <div class="brand-meta-desktop">

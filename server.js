@@ -38,11 +38,19 @@ const start = async () => {
       port: Number(porta),
       host: '0.0.0.0'
     });
-    console.log(`[FX_CHECKER] Servidor iniciado com sucesso em http://localhost:${porta}`);
+    console.log(`[FX_CHECKER] Servidor iniciado e ouvindo na porta ${porta}`);
   } catch (err) {
     server.log.error(err);
     process.exit(1);
   }
 };
 
-start();
+// Se estiver no Vercel Serverless, exporta handler compatível; caso contrário inicia standalone
+if (!process.env.VERCEL) {
+  start();
+}
+
+export default async function handler(req, res) {
+  await server.ready();
+  server.server.emit('request', req, res);
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="fx-logo-svg">
+  <rect width="64" height="64" rx="16" fill="#181920"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="#2D303B" stroke-width="2.5"/>
+  <filter id="neon-glow-brand" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#B6F02A" flood-opacity="0.5"/>
+  </filter>
+  <!-- Duas barras inclinadas // -->
+  <line x1="20" y1="48" x2="31" y2="16" stroke="#B6F02A" stroke-width="5.5" stroke-linecap="round" filter="url(#neon-glow-brand)"/>
+  <line x1="33" y1="48" x2="44" y2="16" stroke="#B6F02A" stroke-width="5.5" stroke-linecap="round" filter="url(#neon-glow-brand)"/>
+</svg>

@@ -4,7 +4,7 @@ Aplicação web de alta fidelidade visual para conversão cambial, análise hist
 
 ---
 
-## 🚀 Como Executar
+## 🚀 Como Executar Localmente
 
 ### 1. Instalar Dependências
 ```bash
@@ -25,11 +25,57 @@ Acesse no navegador:
 
 ---
 
+## ☁️ Como Fazer o Deploy (Produção)
+
+A aplicação já está pré-configurada com arquivos prontos para as principais plataformas de hospedagem em nuvem:
+
+### Opção 1: Render (Recomendado — Gratuito)
+1. Crie uma conta no [Render](https://render.com).
+2. Conecte seu repositório Git do GitHub / GitLab.
+3. Clique em **New +** > **Web Service**.
+4. O Render detectará o arquivo [`render.yaml`](./render.yaml) e [`Procfile`](./Procfile) automaticamente:
+   - **Environment:** `Node`
+   - **Build Command:** `npm install`
+   - **Start Command:** `node server.js`
+5. Clique em **Create Web Service**. Sua URL pública (`https://fx-checker.onrender.com`) estará no ar em instantes!
+
+---
+
+### Opção 2: Vercel
+1. Instale a CLI da Vercel (`npm i -g vercel`) ou conecte via dashboard da [Vercel](https://vercel.com).
+2. Se usar a CLI, basta rodar na raiz do projeto:
+   ```bash
+   vercel
+   ```
+3. O arquivo [`vercel.json`](./vercel.json) já está configurado para rotear as requisições e a interface através do Fastify Serverless.
+
+---
+
+### Opção 3: Railway / Koyeb / Fly.io
+1. Conecte seu repositório no [Railway](https://railway.app).
+2. A plataforma detectará automaticamente o [`Procfile`](./Procfile) e o `package.json`, publicando a aplicação sem necessidade de configurações adicionais.
+
+---
+
+### Opção 4: Docker
+Caso queira subir em um servidor VPS ou nuvem usando contêineres:
+```bash
+docker build -t fx-checker .
+docker run -p 3333:3333 fx-checker
+```
+
+---
+
 ## 📐 Estrutura do Projeto
 
 ```
 Conversor_USD/
 ├── server.js                      # Inicialização do Fastify e roteamento estático/API
+├── render.yaml                    # Configuração para deploy no Render
+├── vercel.json                    # Configuração para deploy na Vercel
+├── Procfile                       # Processo web para Render, Railway e Heroku
+├── Dockerfile                     # Imagem de contêiner para Docker / VPS
+├── .gitignore                     # Arquivos ignorados pelo Git
 ├── data/
 │   └── db.json                    # Banco de dados persistente (favoritos e logs)
 ├── src/

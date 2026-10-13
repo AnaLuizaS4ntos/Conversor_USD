@@ -106,16 +106,33 @@ body.app-body {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.brand-tag {
-  color: var(--accent-lime);
-  font-weight: 800;
+.brand-icon-wrap {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.brand-logo:hover .brand-icon-wrap {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 6px rgba(182, 240, 42, 0.5));
+}
+
+.brand-icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .brand-title {

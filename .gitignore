@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel & Deploy
+.vercel
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Diretórios temporários de build / runtime
+.cache/
