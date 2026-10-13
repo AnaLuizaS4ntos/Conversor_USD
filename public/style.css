@@ -1275,6 +1275,22 @@ body.app-body {
   color: var(--text-muted);
   border-top: 1px solid var(--border-subtle);
   background-color: #0E0F12;
+  line-height: 1.6;
+}
+
+.app-footer a,
+.app-footer .footer-author-link {
+  color: var(--accent-lime);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.app-footer a:hover,
+.app-footer .footer-author-link:hover {
+  color: var(--accent-lime-hover);
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(182, 240, 42, 0.35);
 }
 
 /* ==========================================================================
