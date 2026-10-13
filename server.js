@@ -1,51 +1,48 @@
-//import { createServer } from 'node:http'
+import { fastify } from 'fastify';
+import fastifyStatic from '@fastify/static';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { apiRoutes } from './src/routes/api.js';
 
-//const server = createServer((request, response) => {
-    // response.write('oiii')
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-     //return response.end()
-//})
- 
-//server.listen(3333)
+const server = fastify({
+  logger: false
+});
 
-import { fastify } from 'fastify'
+// Registrar rotas de API primeiro
+await server.register(apiRoutes);
 
-const server = fastify({})
+// Servir arquivos estáticos do frontend (HTML, CSS, JS, Assets)
+await server.register(fastifyStatic, {
+  root: join(__dirname, 'public'),
+  prefix: '/',
+  index: 'index.html'
+});
 
-//porta hibrida / hybrid port
-const porta = process.env.PORT || 3333;
-
-//rotas / route
-server.get('/home', () =>{
-     return 'History - Default'
-})
-
-server.get('/compare', () =>{
-     return 'Compare'
-})
-
-server.get('/favorites', () =>{
-     return 'Favorites'
-})
-
-server.get('/log', () =>{
-     return 'Log'
-})
-
-
-//rota hibrida pra nuvem e pra localhost / hybrid port for a cloud and a localhost
-const start = async () => {
-     try{
-          await server.listen({
-               port: porta,
-               host: '0.0.0.0'
-          })
-     }catch(err){
-          server.log.error(err)
-          process.exit(1)
-     }
+// Rotas de navegação direta para suportar URLs diretas (como /home, /compare, /favorites, /log)
+const routes = ['/home', '/compare', '/favorites', '/log'];
+for (const route of routes) {
+  server.get(route, (req, reply) => {
+    return reply.sendFile('index.html');
+  });
 }
 
-start()
+// Porta híbrida (ambiente em nuvem ou localhost)
+const porta = process.env.PORT || 3333;
 
+const start = async () => {
+  try {
+    await server.listen({
+      port: Number(porta),
+      host: '0.0.0.0'
+    });
+    console.log(`[FX_CHECKER] Servidor iniciado com sucesso em http://localhost:${porta}`);
+  } catch (err) {
+    server.log.error(err);
+    process.exit(1);
+  }
+};
 
+start();

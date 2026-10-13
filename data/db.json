@@ -1,0 +1,137 @@
+{
+  "favorites": [
+    {
+      "base": "GBP",
+      "quote": "USD",
+      "createdAt": "2026-05-14T09:00:00Z"
+    },
+    {
+      "base": "USD",
+      "quote": "JPY",
+      "createdAt": "2026-05-14T08:00:00Z"
+    },
+    {
+      "base": "USD",
+      "quote": "BDT",
+      "createdAt": "2026-05-14T07:00:00Z"
+    },
+    {
+      "base": "EUR",
+      "quote": "GBP",
+      "createdAt": "2026-05-14T06:00:00Z"
+    },
+    {
+      "base": "AUD",
+      "quote": "NZD",
+      "createdAt": "2026-05-14T05:00:00Z"
+    },
+    {
+      "base": "USD",
+      "quote": "INR",
+      "createdAt": "2026-05-14T04:00:00Z"
+    },
+    {
+      "base": "EUR",
+      "quote": "CHF",
+      "createdAt": "2026-05-14T03:00:00Z"
+    },
+    {
+      "base": "GBP",
+      "quote": "JPY",
+      "createdAt": "2026-05-14T02:00:00Z"
+    },
+    {
+      "base": "USD",
+      "quote": "TRY",
+      "createdAt": "2026-05-14T01:00:00Z"
+    },
+    {
+      "base": "USD",
+      "quote": "EUR",
+      "createdAt": "2026-10-13T20:49:50.197Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "1791924592901o8q1",
+      "from": "USD",
+      "to": "EUR",
+      "fromAmount": 1000,
+      "toAmount": 893.81,
+      "rate": 0.89381,
+      "timestamp": 1791924592901
+    },
+    {
+      "id": "1",
+      "from": "USD",
+      "to": "EUR",
+      "fromAmount": 1000,
+      "toAmount": 853.02,
+      "rate": 0.85302,
+      "timestamp": 1791918929441
+    },
+    {
+      "id": "2",
+      "from": "EUR",
+      "to": "JPY",
+      "fromAmount": 500,
+      "toAmount": 92490,
+      "rate": 184.98,
+      "timestamp": 1791918089441
+    },
+    {
+      "id": "3",
+      "from": "GBP",
+      "to": "USD",
+      "fromAmount": 250,
+      "toAmount": 339.38,
+      "rate": 1.3575,
+      "timestamp": 1791917129441
+    },
+    {
+      "id": "4",
+      "from": "USD",
+      "to": "GBP",
+      "fromAmount": 1500,
+      "toAmount": 1104.95,
+      "rate": 0.73665,
+      "timestamp": 1791916529441
+    },
+    {
+      "id": "5",
+      "from": "BDT",
+      "to": "USD",
+      "fromAmount": 50000,
+      "toAmount": 406.77,
+      "rate": 0.00813,
+      "timestamp": 1791912929441
+    },
+    {
+      "id": "6",
+      "from": "EUR",
+      "to": "INR",
+      "fromAmount": 100,
+      "toAmount": 11127.43,
+      "rate": 111.27,
+      "timestamp": 1791905729441
+    },
+    {
+      "id": "7",
+      "from": "AUD",
+      "to": "USD",
+      "fromAmount": 2000,
+      "toAmount": 1441.6,
+      "rate": 0.7208,
+      "timestamp": 1791833729441
+    },
+    {
+      "id": "8",
+      "from": "CHF",
+      "to": "USD",
+      "fromAmount": 750,
+      "toAmount": 824.36,
+      "rate": 1.0991,
+      "timestamp": 1791747329441
+    }
+  ]
+}
